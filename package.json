@@ -1,26 +1,25 @@
 {
-  "name": "getting-started",
+  "name": "discord_bot",
   "version": "1.0.0",
-  "description": "Discord example app",
-  "main": "app.js",
-  "type": "module",
-  "engines": {
-    "node": "16.x"
-  },
+  "description": "Personal discord bot",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "register": "node commands.js",
-    "dev": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Shay DeWael",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephChang1/RoomiestBot.git"
+  },
+  "author": "Joseph Chang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosephChang1/RoomiestBot/issues"
+  },
+  "homepage": "https://github.com/JosephChang1/RoomiestBot#readme",
   "dependencies": {
-    "discord-interactions": "^3.2.0",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "node-fetch": "^3.3.0"
+    "discord.js": "^14.13.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "eslint": "^8.48.0"
   }
 }
