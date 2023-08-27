@@ -4,8 +4,16 @@ const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+// Initialize client
+const client = new Client({
+	intents: [
+	  GatewayIntentBits.Guilds,
+	  GatewayIntentBits.GuildMessages,
+	  GatewayIntentBits.MessageContent,
+	]
+  })
 
+// Collect commands
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
@@ -24,10 +32,12 @@ for (const folder of commandFolders) {
 	}
 }
 
+// Discord client loggin message
 client.once(Events.ClientReady, () => {
 	console.log('Ready!');
 });
 
+// Interact with command
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
@@ -46,5 +56,19 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	}
 });
+
+client.on('messageCreate', async message => {
+  if (message.author.bot) return false;
+
+  try {
+	if (message.content.toLowerCase().includes("joever")) {
+	  await message.reply( {files: ["./images/" + "joever.jpg"]} )
+	}
+  } catch (error) {
+	console.error(error);
+  }
+});
+
+  
 
 client.login(token);
