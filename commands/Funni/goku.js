@@ -7,7 +7,7 @@ const messages =
 "I peed white\nWhat's wrong with me\n😥\nIt was like milk @polar",
 "Do you think virginity is a social construct",
 "I wish they changed the rule for presidents that only us borns can become one :worrykms:",
-"Why is a test engineer recommending a cp hentai",
+"Why is a test engineer recommending a cp hentai\n🤔",
 "If thecco is the republican, I must be the one offsetting his bigotry",
 "Anyone here got a NPC kink?",
 "@polar you ever thought about when you're eating popcorn that you're just eating bunch of busted nuts?",
