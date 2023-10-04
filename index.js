@@ -57,12 +57,24 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
+// Capture Joever moment
 client.on('messageCreate', async message => {
   if (message.author.bot) return false;
 
   try {
 	if (message.content.toLowerCase().includes("joever")) {
 	  await message.reply( {files: ["./images/" + "joever.jpg"]} )
+	} else if (message.content.toLowerCase().includes("waltuh") || message.content.includes("finger")) {
+		const member = await message.guild.members.fetch(message.author);
+  		const nickname = member ? member.nickname : message.author.displayName;
+		await message.reply( {files: ["./images/" + "waltuh.png"], content: `I am not having sex with you right now ${nickname}`} )
+	} else if (	message.content.toLowerCase().includes("nigga") || 
+				message.content.toLowerCase().includes("nigger")|| 
+				message.content.toLowerCase().includes("hentai")|| 
+				message.content.toLowerCase().includes("logan")|| 
+				message.content.toLowerCase().includes("balls")|| 
+				message.content.toLowerCase().includes("cum")) {
+		await message.reply( {files: ["./images/" + "stare.jpg"] })
 	}
   } catch (error) {
 	console.error(error);

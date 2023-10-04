@@ -11,19 +11,22 @@ module.exports = {
 
 	async execute(interaction) {
 		const channelId = interaction.options.getChannel('channel');
-
+		console.log(channelId);
 		const earliestDate = new Date();
 		earliestDate.setMonth(earliestDate.getMonth()-1)
 
 		let count = 0;
+		await interaction.deferReply();
 		const firstMsg = await channelId.messages.fetch({limit: 1}); 
+		
+		console.log(firstMsg);
 		if (!firstMsg.first()){
 			count = 0;
 		} else {
 			count = await fetchMessagesUntil(channelId, earliestDate, firstMsg.first().id);
 		}
 		
-        await interaction.reply(`Roomiest says: There are ${count} messages in ${channelId.url} since last month [ ${earliestDate} ]`);
+        await interaction.editReply(`Roomiest says: There are ${count} messages in ${channelId.url} since last month [ ${earliestDate} ]`);
 	},
 };
 
